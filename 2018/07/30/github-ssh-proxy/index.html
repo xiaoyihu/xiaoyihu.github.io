@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="今天碰到ssh 代理的问题，找了一些，总结如下： 环境：win10 第一：需要有github的ssh，具体生成可以参考github帮助文档： 第二：在用户目录的.ssh的文件夹下，新建一个文件，config，不带扩展名，内容如下： ···ProxyCommand “/c/Program Files/Git/mingw64/bin/connect.exe” -H http://{proxyServe">
+<meta name="description" content="今天碰到ssh 代理的问题，找了一些，总结如下： 环境win10 生成ssh需要有github的ssh，具体生成可以参考github帮助文档，可以直接搜索关键词github ssh。 增加ssh的配置在用户目录的.ssh的文件夹下，新建一个文件，config，不带扩展名，内容如下： 1234567891011121314151617ProxyCommand &amp;quot;/c/Program Fil">
 <meta property="og:type" content="article">
 <meta property="og:title" content="github ssh proxy">
 <meta property="og:url" content="http://yoursite.com/2018/07/30/github-ssh-proxy/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="今天碰到ssh 代理的问题，找了一些，总结如下： 环境：win10 第一：需要有github的ssh，具体生成可以参考github帮助文档： 第二：在用户目录的.ssh的文件夹下，新建一个文件，config，不带扩展名，内容如下： ···ProxyCommand “/c/Program Files/Git/mingw64/bin/connect.exe” -H http://{proxyServe">
+<meta property="og:description" content="今天碰到ssh 代理的问题，找了一些，总结如下： 环境win10 生成ssh需要有github的ssh，具体生成可以参考github帮助文档，可以直接搜索关键词github ssh。 增加ssh的配置在用户目录的.ssh的文件夹下，新建一个文件，config，不带扩展名，内容如下： 1234567891011121314151617ProxyCommand &amp;quot;/c/Program Fil">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-30T04:40:25.886Z">
+<meta property="og:updated_time" content="2018-07-30T06:04:23.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github ssh proxy">
-<meta name="twitter:description" content="今天碰到ssh 代理的问题，找了一些，总结如下： 环境：win10 第一：需要有github的ssh，具体生成可以参考github帮助文档： 第二：在用户目录的.ssh的文件夹下，新建一个文件，config，不带扩展名，内容如下： ···ProxyCommand “/c/Program Files/Git/mingw64/bin/connect.exe” -H http://{proxyServe">
+<meta name="twitter:description" content="今天碰到ssh 代理的问题，找了一些，总结如下： 环境win10 生成ssh需要有github的ssh，具体生成可以参考github帮助文档，可以直接搜索关键词github ssh。 增加ssh的配置在用户目录的.ssh的文件夹下，新建一个文件，config，不带扩展名，内容如下： 1234567891011121314151617ProxyCommand &amp;quot;/c/Program Fil">
 
 
 
@@ -235,7 +235,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/30/github-ssh-proxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Hu Xiaoyi">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -300,12 +300,15 @@
 
       
         <p>今天碰到ssh 代理的问题，找了一些，总结如下：</p>
-<p>环境：win10</p>
-<p>第一：需要有github的ssh，具体生成可以参考github帮助文档：</p>
-<p>第二：在用户目录的.ssh的文件夹下，新建一个文件，config，不带扩展名，内容如下：</p>
-<p>···<br>ProxyCommand “/c/Program Files/Git/mingw64/bin/connect.exe” -H http://{proxyServerNameOrIp}:{port} %h %p</p>
-<p>Host github.com<br>  User git<br>  Port 22<br>  Hostname github.com<br>  IdentityFile “/c/Users/{你的名字}/.ssh/id_rsa”<br>  TCPKeepAlive yes<br>  IdentitiesOnly yes</p>
-<p>Host ssh.github.com<br>  User git<br>  Port 443<br>  Hostname ssh.github.com<br>  IdentityFile “/c/Users/{你的名字}/.ssh/id_rsa”<br>  TCPKeepAlive yes<br>  IdentitiesOnly yes<br>···</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>win10</p>
+<h2 id="生成ssh"><a href="#生成ssh" class="headerlink" title="生成ssh"></a>生成ssh</h2><p>需要有github的ssh，具体生成可以参考github帮助文档，可以直接搜索关键词<code>github ssh</code>。</p>
+<h2 id="增加ssh的配置"><a href="#增加ssh的配置" class="headerlink" title="增加ssh的配置"></a>增加ssh的配置</h2><p>在用户目录的.ssh的文件夹下，新建一个文件，config，不带扩展名，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ProxyCommand &quot;/c/Program Files/Git/mingw64/bin/connect.exe&quot; -H http://&#123;proxyServerNameOrIp&#125;:&#123;port&#125; %h %p</span><br><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line">  User git</span><br><span class="line">  Port 22</span><br><span class="line">  Hostname github.com</span><br><span class="line">  IdentityFile &quot;/c/Users/&#123;你的名字&#125;/.ssh/id_rsa&quot;</span><br><span class="line">  TCPKeepAlive yes</span><br><span class="line">  IdentitiesOnly yes</span><br><span class="line"></span><br><span class="line">Host ssh.github.com</span><br><span class="line">  User git</span><br><span class="line">  Port 443</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  IdentityFile &quot;/c/Users/&#123;你的名字&#125;/.ssh/id_rsa&quot;</span><br><span class="line">  TCPKeepAlive yes</span><br><span class="line">  IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
+<h2 id="相关连接"><a href="#相关连接" class="headerlink" title="相关连接"></a>相关连接</h2><ul>
+<li><a href="https://communary.net/2017/01/12/getting-git-to-work-through-a-proxy-server-in-windows/" target="_blank" rel="noopener">https://communary.net/2017/01/12/getting-git-to-work-through-a-proxy-server-in-windows/</a></li>
+<li><a href="https://stackoverflow.com/questions/5103083/ssh-in-git-behind-proxy-on-windows-7" target="_blank" rel="noopener">https://stackoverflow.com/questions/5103083/ssh-in-git-behind-proxy-on-windows-7</a></li>
+<li><a href="http://www.returnbooleantrue.com/2009/06/using-github-through-draconian-proxies.html" target="_blank" rel="noopener">http://www.returnbooleantrue.com/2009/06/using-github-through-draconian-proxies.html</a></li>
+</ul>
 
       
     </div>
@@ -390,12 +393,21 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">Hu Xiaoyi</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -434,6 +446,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成ssh"><span class="nav-number">2.</span> <span class="nav-text">生成ssh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加ssh的配置"><span class="nav-number">3.</span> <span class="nav-text">增加ssh的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关连接"><span class="nav-number">4.</span> <span class="nav-text">相关连接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -451,7 +479,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Hu Xiaoyi</span>
 
   
 </div>
